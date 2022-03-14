@@ -42,6 +42,10 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+  	<release version="1.1.0.fl1" date="2022-03-14">
+    <description>Same 1.1.0 release but with updated dependencies (Qt 5.15 and Boost 1.78)</description>
+    <url>https://github.com/ahrm/sioyek/releases/tag/v1.1.0</url>
+    </release>
     <release version="1.1.0" date="2022-02-18">
     <description>1.1.0 release</description>
     <url>https://github.com/ahrm/sioyek/releases/tag/v1.1.0</url>
