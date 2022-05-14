@@ -4,17 +4,17 @@
                zlib
            
  
--QT += core sql opengl gui widgets quickwidgets 3dcore 3danimation 3dextras 3dinput 3dlogic 3drender openglextensions
+-QT += core opengl gui widgets network 3dinput openglextensions
 +QT += core opengl gui widgets openglextensions network
  CONFIG += c++17
--DEFINES += QT_3DCORE_LIB QT_3DANIMATION_LIB QT_3DEXTRAS_LIB QT_3DINPUT_LIB QT_3DLOGIC_LIB QT_3DRENDER_LIB QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_QUICKWIDGETS_LIB QT_SQL_LIB QT_WIDGETS_LIB
+-DEFINES += QT_3DINPUT_LIB QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_WIDGETS_LIB
 +DEFINES += QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_WIDGETS_LIB QT_NETWORK_LIB
  
  
  CONFIG(non_portable){
 @@ -72,7 +72,7 @@
-     QMAKE_CXXFLAGS += -std=c++17
-     LIBS += -ldl -Lmupdf/build/release -lmupdf -lmupdf-third -lmupdf-threads -lharfbuzz -lz
+     }
+ 
      isEmpty(PREFIX){
 -        PREFIX = /usr
 +        PREFIX = /app
@@ -40,9 +40,9 @@
  
 -#include <qkeyevent.h>
 +#include <QKeyEvent>
- //#include <SDL.h>
+ #include <qstring.h>
+ #include <qstringlist.h>
  #include "input.h"
- 
 --- a/pdf_viewer/main.cpp	2022-02-18 07:47:57.000000000 -0400
 +++ b/pdf_viewer/main.cpp	2022-03-07 17:57:24.106376344 -0400
 @@ -29,7 +29,7 @@

@@ -151,8 +151,8 @@ sources:
  - type: git
    url: https://invent.kde.org/qt/qt/qtbase.git
    branch: kde/5.15
-   # HEAD as of 14/03/2022
-   commit: 2766b2cba6ca4b1c430304df5437e2a6c874b107
+   # HEAD as of 14/05/2022
+   commit: e0a15c11b853954d4189b2e30aa2450184de0987
  - type: patch
    path: patch/qtbase-avoid-hardcoding-kernel-version.patch
  - type: patch

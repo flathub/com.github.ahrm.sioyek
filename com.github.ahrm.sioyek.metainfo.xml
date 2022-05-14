@@ -42,6 +42,27 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.3.0" date="2022-05-14">
+    <description>
+    <ul>
+      <li>Vastly improved ruler mode with support for multicolumn documents and ability to automatically goto/portal to/overview the definition in highlighted line. here is a video demo of this feature.</li>
+      <li>Automatic table of contents generation for documents that don't have table of contents</li>
+      <li>Automatically mark the location of last search with symbol '/' and location of last visual mark with symbol '`'</li>
+      <li>Better handling of visual ruler in presentation mode</li>
+      <li>Add ability to automatically use downloaded files as portal destinations</li>
+      <li>Add ability to select text using keyboard (see #147 (comment))</li>
+      <li>Add ability to open files using drag and drop</li>
+      <li>Save and restore window and overview positions</li>
+      <li>Add ability to execute shell commands on selected text in PDF file (for example can be used to make a translator)</li>
+      <li>Add ability to bind multiple commands to the same key binding (all are executed in order when key is pressed)</li>
+      <li>Improved smart jump to support more document formats</li>
+      <li>Handle xclip text selection</li>
+      <li>Add ability to rotate pages</li>
+      <li>Numerous bug-fixes and quality of life improvements</li>
+    </ul>
+    </description>
+    <url>https://github.com/ahrm/sioyek/releases/tag/v1.3.0</url>
+    </release>
   	<release version="1.1.0.fl1" date="2022-03-14">
     <description>Same 1.1.0 release but with updated dependencies (Qt 5.15 and Boost 1.78)</description>
     <url>https://github.com/ahrm/sioyek/releases/tag/v1.1.0</url>
