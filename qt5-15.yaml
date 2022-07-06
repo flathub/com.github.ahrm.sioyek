@@ -6,8 +6,8 @@ sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qtwayland.git
     branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: f4dd0560032c101fe9fd140ccc2397f5c0184146
+    # HEAD as of 06/07/2022
+    commit: 64fa557eb30fc1219bec50a45107ea1a983411ed
 name: qtquickcontrols
 buildsystem: qmake
 cleanup:
@@ -16,8 +16,8 @@ sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qtquickcontrols.git
     branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: d054de15b3c9ead0f96655ddfb1a6381ed7a0e2b
+    # HEAD as of 06/07/2022
+    commit: 4fb4e5942bfa1f92f1c759f182aa504ad52e8e3b
 name: qtdeclarative
 buildsystem: qmake
 cleanup:
@@ -26,8 +26,8 @@ sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qtdeclarative.git
     branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: 4bb06cfba94bcc9ddf30d968a227d00479d475b7
+    # HEAD as of 06/07/2022
+    commit: c47f3d7b227c9bc86ca1702ae3291a62c2116cfa
 name: qtx11extras
 buildsystem: qmake
 cleanup:
@@ -37,7 +37,7 @@ sources:
     url: https://invent.kde.org/qt/qt/qtx11extras.git
     branch: kde/5.15
     # HEAD as of 14/03/2022
-    commit: f628d7a60e45d90a439cb0a393a6229ac6892be5
+    commit: 0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e
 name: qt5-qttools
 buildsystem: qmake
 cleanup:
@@ -69,8 +69,8 @@ sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qttools.git
     branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: 36831ae742619e13db32ee6048d851bddee28a74
+    # HEAD as of 06/07/2022
+    commit: 672ba9d902be3634a9fef80be65227aece9e0aed
 name: qt3d
 buildsystem: qmake
 cleanup:
@@ -79,8 +79,8 @@ sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qt3d.git
     branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: cd8f66a15ed63ea80ca66ebe30f1a3fe75fb29eb
+    # HEAD as of 06/07/2022
+    commit: 3cc801c4ae41ff3f155258c4bf7e21bb5b3f6a3d
 name: qt5-qtbase
 buildsystem: autotools
 cleanup:
@@ -151,8 +151,8 @@ sources:
  - type: git
    url: https://invent.kde.org/qt/qt/qtbase.git
    branch: kde/5.15
-   # HEAD as of 14/05/2022
-   commit: e0a15c11b853954d4189b2e30aa2450184de0987
+   # HEAD as of 06/07/2022
+   commit: aa0c6db334cf6f0887f42cbd82e4af258126bdc5
  - type: patch
    path: patch/qtbase-avoid-hardcoding-kernel-version.patch
  - type: patch
