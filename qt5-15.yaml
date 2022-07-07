@@ -8,163 +8,164 @@ sources:
     branch: kde/5.15
     # HEAD as of 06/07/2022
     commit: 64fa557eb30fc1219bec50a45107ea1a983411ed
-name: qtquickcontrols
-buildsystem: qmake
-cleanup:
-  - /bin
-sources:
-  - type: git
-    url: https://invent.kde.org/qt/qt/qtquickcontrols.git
-    branch: kde/5.15
-    # HEAD as of 06/07/2022
-    commit: 4fb4e5942bfa1f92f1c759f182aa504ad52e8e3b
-name: qtdeclarative
-buildsystem: qmake
-cleanup:
-  - /bin
-sources:
-  - type: git
-    url: https://invent.kde.org/qt/qt/qtdeclarative.git
-    branch: kde/5.15
-    # HEAD as of 06/07/2022
-    commit: c47f3d7b227c9bc86ca1702ae3291a62c2116cfa
-name: qtx11extras
-buildsystem: qmake
-cleanup:
-  - /bin
-sources:
-  - type: git
-    url: https://invent.kde.org/qt/qt/qtx11extras.git
-    branch: kde/5.15
-    # HEAD as of 14/03/2022
-    commit: 0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e
-name: qt5-qttools
-buildsystem: qmake
-cleanup:
-  - /bin
-  - /include
-  - /lib
-  - /phrasebooks
-  - '*.prl'
-  - '*.la'
-  - '*.a'
-cleanup-platform:
-  - /mkspecs
-  - /bin/assistant
-  - /bin/qhelpgenerator
-  - /bin/qcollectiongenerator
-  - /bin/qhelpconverter
-  - /bin/pixeltool
-  - /bin/designer
-  - /bin/lrelease
-  - /bin/lupdate
-  - /bin/lconvert
-  - /bin/linguist
-  - /bin/qdoc
-  - /bin/qtattributionsscanner
-  - /bin/qtplugininfo
-  - /bin/qtdiag
-  - /bin/qdbusviewer
-sources:
-  - type: git
-    url: https://invent.kde.org/qt/qt/qttools.git
-    branch: kde/5.15
-    # HEAD as of 06/07/2022
-    commit: 672ba9d902be3634a9fef80be65227aece9e0aed
-name: qt3d
-buildsystem: qmake
-cleanup:
-  - /bin
-sources:
-  - type: git
-    url: https://invent.kde.org/qt/qt/qt3d.git
-    branch: kde/5.15
-    # HEAD as of 06/07/2022
-    commit: 3cc801c4ae41ff3f155258c4bf7e21bb5b3f6a3d
-name: qt5-qtbase
-buildsystem: autotools
-cleanup:
- - /bin
- - /include
- - /doc
- - /lib/cmake
- - /lib/pkgconfig
- - /lib/mkspecs
- - /lib/*.so
- - /lib/libQt5PrintSupport*
- - /lib/libQt5Concurrent*
- - /lib/libQt5Xml*
- - '*.prl'
- - '*.la'
- - '*.a'
-build-options:
- arch:
-   x86_64:
-     config-opts:
-       - -reduce-relocations
-       #- -force-debug-info
-   aarch64:
-     config-opts:
-       - -no-reduce-relocations
-       - -optimize-size
-       - -opengl es2
-post-install:
- - strip ${FLATPAK_DEST}/lib/*.so.5.*
- - strip ${FLATPAK_DEST}/lib/plugins/*/*.so
-config-opts:
- - -confirm-license
- - -opensource
- - -shared
- - -release
- - -strip
- - -platform
- - linux-g++
- - -optimized-qmake
- - -nomake
- - examples
- - -nomake
- - tests
- - -system-harfbuzz
- - -system-sqlite
- - -accessibility
- - -dbus-linked
- - -fontconfig
- - -glib
- - -icu
- - -openssl-linked
- - -no-cups
- - -no-pch
- - -no-rpath
- - -no-directfb
- - -no-linuxfb
- - -no-kms
- - -no-feature-sql
- - -no-feature-testlib
- - -system-proxies
- - -gtk
- - -no-use-gold-linker
- - -qpa
- - xcb
- - -archdatadir
- - /app/lib
-sources:
- - type: git
-   url: https://invent.kde.org/qt/qt/qtbase.git
-   branch: kde/5.15
-   # HEAD as of 06/07/2022
-   commit: aa0c6db334cf6f0887f42cbd82e4af258126bdc5
- - type: patch
-   path: patch/qtbase-avoid-hardcoding-kernel-version.patch
- - type: patch
-   path: patch/qtbase-use-wayland-on-gnome.patch
- # TODO: Temporary fix for https://github.com/flatpak/flatpak/issues/3397.
- - type: patch
-   path: patch/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch
- - type: shell
-   commands:
-     - mv configure configure.qt
- - type: script
-   commands:
-     - processed=`sed -e 's/--/-/g ; s/=/ /g' <<< $@`
-     - ./configure.qt $processed
-   dest-filename: configure
+modules:
+  - name: qt5-qtbase
+    buildsystem: autotools
+    cleanup:
+     - /bin
+     - /include
+     - /doc
+     - /lib/cmake
+     - /lib/pkgconfig
+     - /lib/mkspecs
+     - /lib/*.so
+     - /lib/libQt5PrintSupport*
+     - /lib/libQt5Concurrent*
+     - /lib/libQt5Xml*
+     - '*.prl'
+     - '*.la'
+     - '*.a'
+    build-options:
+     arch:
+       x86_64:
+         config-opts:
+           - -reduce-relocations
+           #- -force-debug-info
+       aarch64:
+         config-opts:
+           - -no-reduce-relocations
+           - -optimize-size
+           - -opengl es2
+    post-install:
+     - strip ${FLATPAK_DEST}/lib/*.so.5.*
+     - strip ${FLATPAK_DEST}/lib/plugins/*/*.so
+    config-opts:
+     - -confirm-license
+     - -opensource
+     - -shared
+     - -release
+     - -strip
+     - -platform
+     - linux-g++
+     - -optimized-qmake
+     - -nomake
+     - examples
+     - -nomake
+     - tests
+     - -system-harfbuzz
+     - -system-sqlite
+     - -accessibility
+     - -dbus-linked
+     - -fontconfig
+     - -glib
+     - -icu
+     - -openssl-linked
+     - -no-cups
+     - -no-pch
+     - -no-rpath
+     - -no-directfb
+     - -no-linuxfb
+     - -no-kms
+     - -no-feature-sql
+     - -no-feature-testlib
+     - -system-proxies
+     - -gtk
+     - -no-use-gold-linker
+     - -qpa
+     - xcb;wayland
+     - -archdatadir
+     - /app/lib
+    sources:
+     - type: git
+       url: https://invent.kde.org/qt/qt/qtbase.git
+       branch: kde/5.15
+       # HEAD as of 06/07/2022
+       commit: aa0c6db334cf6f0887f42cbd82e4af258126bdc5
+     - type: patch
+       path: patch/qtbase-avoid-hardcoding-kernel-version.patch
+     - type: patch
+       path: patch/qtbase-use-wayland-on-gnome.patch
+     # TODO: Temporary fix for https://github.com/flatpak/flatpak/issues/3397.
+     - type: patch
+       path: patch/qtbase-revert-qstandardpaths-dont-change-permissions-on-xdg-runtime-dir.patch
+     - type: shell
+       commands:
+         - mv configure configure.qt
+     - type: script
+       commands:
+         - processed=`sed -e 's/--/-/g ; s/=/ /g' <<< $@`
+         - ./configure.qt $processed
+       dest-filename: configure
+  - name: qt3d
+    buildsystem: qmake
+    cleanup:
+      - /bin
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qt3d.git
+        branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 3cc801c4ae41ff3f155258c4bf7e21bb5b3f6a3d
+  - name: qt5-qttools
+    buildsystem: qmake
+    cleanup:
+      - /bin
+      - /include
+      - /lib
+      - /phrasebooks
+      - '*.prl'
+      - '*.la'
+      - '*.a'
+    cleanup-platform:
+      - /mkspecs
+      - /bin/assistant
+      - /bin/qhelpgenerator
+      - /bin/qcollectiongenerator
+      - /bin/qhelpconverter
+      - /bin/pixeltool
+      - /bin/designer
+      - /bin/lrelease
+      - /bin/lupdate
+      - /bin/lconvert
+      - /bin/linguist
+      - /bin/qdoc
+      - /bin/qtattributionsscanner
+      - /bin/qtplugininfo
+      - /bin/qtdiag
+      - /bin/qdbusviewer
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qttools.git
+        branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 672ba9d902be3634a9fef80be65227aece9e0aed
+  - name: qtx11extras
+    buildsystem: qmake
+    cleanup:
+      - /bin
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qtx11extras.git
+        branch: kde/5.15
+        # HEAD as of 14/03/2022
+        commit: 0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e
+  - name: qtdeclarative
+    buildsystem: qmake
+    cleanup:
+      - /bin
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qtdeclarative.git
+        branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: c47f3d7b227c9bc86ca1702ae3291a62c2116cfa
+  - name: qtquickcontrols
+    buildsystem: qmake
+    cleanup:
+      - /bin
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qtquickcontrols.git
+        branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 4fb4e5942bfa1f92f1c759f182aa504ad52e8e3b

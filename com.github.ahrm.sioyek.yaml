@@ -15,10 +15,8 @@ finish-args:
   - --filesystem=/media
   - --filesystem=/tmp
   - --share=ipc
-  # Sioyek fails with wayland (invisible window)
-  #- --socket=wayland
-  #- --socket=fallback-x11
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --device=shm
   - --device=dri
 

@@ -2,7 +2,7 @@
 Name=Sioyek
 GenericName=PDF Viewer for research papers
 Comment=Sioyek is a PDF viewer designed for reading research papers and technical books
-Exec=sioyek
+Exec=sioyek %f
 Icon=com.github.ahrm.sioyek
 Terminal=false
 Type=Application
