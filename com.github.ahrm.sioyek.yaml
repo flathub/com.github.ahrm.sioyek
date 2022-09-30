@@ -46,8 +46,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ahrm/sioyek.git
-        commit: 6e5f15c85132d5183a050e5deee68ed2eb4857c4
-        tag: 'v1.4.0'
+        tag: 'v1.5.0'
       - type: patch
         path: patch/sioyek_build_fix.patch
       - type: file
