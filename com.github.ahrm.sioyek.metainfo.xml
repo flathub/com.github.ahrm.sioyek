@@ -43,6 +43,23 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="1.5.0" date="2022-08-20">
+    <description>
+    <ul>
+    <li>Vastly improved extension capabilities. Now we have can have more inputs to the scripts (for example the text of the current line or the name of the paper under mouse cursor). Extensions are now able to run all of the built-in sioyek commands.</li>
+    <li>Add ability to bind control/shift/alt+click to commands.</li>
+    <li>Better support for non-english keyboards.</li>
+    <li>Show multiline bookmarks/highlights in menus instead of truncating them.</li>
+    <li>Significantly improved performance when opening large files for the first time.</li>
+    <li>Add ability to create named custom commands which can be executed from the built-in command palette.</li>
+    <li>Add ability to try other previews in the overview window if the first one is not correct (using the next_preview and previous_preview commands). Also add commands to directly goto or create a portal to preview locations.</li>
+    <li>Add an option to pre-render the next page in presentation mode (prevents flickering).</li>
+    <li>Better handling of multicolumn documents in visual mark mode.</li>
+    <li>Add ability to search and switch between opened sioyek windows.</li>
+    </ul>
+    </description>
+    <url>https://github.com/ahrm/sioyek/releases/tag/v1.5.0</url>
+    </release>
     <release version="1.4.0fl1" date="2022-07-11">
     <description>
     Sioyek 1.4.0fl flathub maintance release:
