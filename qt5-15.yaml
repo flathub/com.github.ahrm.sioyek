@@ -5,9 +5,9 @@ cleanup:
 sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qtwayland.git
-    branch: kde/5.15
-    # HEAD as of 30/09/2022
-    commit: 8faf74a7966b520f0ac3eb4d88235f8ec63b31b8
+    #branch: kde/5.15
+    # HEAD as of 06/07/2022
+    commit: 64fa557eb30fc1219bec50a45107ea1a983411ed
 modules:
   - name: qt5-qtbase
     buildsystem: autotools
@@ -78,9 +78,9 @@ modules:
     sources:
      - type: git
        url: https://invent.kde.org/qt/qt/qtbase.git
-       branch: kde/5.15
-       # HEAD as of 30/09/2022
-       commit: 4abf3579e1d3834600da81b103d403df575b1b4f
+       #branch: kde/5.15
+       # HEAD as of 06/07/2022
+       commit: aa0c6db334cf6f0887f42cbd82e4af258126bdc5
      - type: patch
        path: patch/qtbase-avoid-hardcoding-kernel-version.patch
      - type: patch
@@ -103,9 +103,9 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qt3d.git
-        branch: kde/5.15
-        # HEAD as of 30/09/2022
-        commit: fe5fca853c09c7e03a2ff66dac21584e3307984d
+        #branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 3cc801c4ae41ff3f155258c4bf7e21bb5b3f6a3d
   - name: qt5-qttools
     buildsystem: qmake
     cleanup:
@@ -136,9 +136,9 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qttools.git
-        branch: kde/5.15
-        # HEAD as of 30/09/2022
-        commit: 32912a06aadfc3dcbc34e0a668ce2c78351eee6e
+        #branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 672ba9d902be3634a9fef80be65227aece9e0aed
   - name: qtx11extras
     buildsystem: qmake
     cleanup:
@@ -146,9 +146,9 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtx11extras.git
-        branch: kde/5.15
-        # HEAD as of 30/09/2022
-        commit: 982f20eb585d77e5b5c721e05a466d7161f7f2d1
+        #branch: kde/5.15
+        # HEAD as of 14/03/2022
+        commit: 0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e
   - name: qtdeclarative
     buildsystem: qmake
     cleanup:
@@ -156,9 +156,9 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtdeclarative.git
-        branch: kde/5.15
-        # HEAD as of 30/09/2022
-        commit: b3aaf1482c48bbc0ca4f7c7934597c055afe4b6a
+        #branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: c47f3d7b227c9bc86ca1702ae3291a62c2116cfa
   - name: qtquickcontrols
     buildsystem: qmake
     cleanup:
@@ -166,6 +166,6 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtquickcontrols.git
-        branch: kde/5.15
-        # HEAD as of 30/09/2022
-        commit: e62b8b6d2f45a79652238b33f4bbe23023004ae7
+        #branch: kde/5.15
+        # HEAD as of 06/07/2022
+        commit: 4fb4e5942bfa1f92f1c759f182aa504ad52e8e3b
