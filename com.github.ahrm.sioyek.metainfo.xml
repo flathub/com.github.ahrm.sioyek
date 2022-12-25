@@ -4,7 +4,7 @@
   <launchable type="desktop-id">com.github.ahrm.sioyek.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
-  <developer_name></developer_name>
+  <developer_name>Ali Mostafavi</developer_name>
   <name>Sioyek</name>
   <summary>PDF viewer designed for reading research papers and technical books</summary>
   <description>
@@ -39,10 +39,37 @@
   </screenshots>
   <url type="homepage">https://github.com/ahrm/sioyek</url>
   <url type="help">https://sioyek-documentation.readthedocs.io/en/latest/index.html</url>
+  <url type="donation">https://www.buymeacoffee.com/ahrm</url>
   <url type="bugtracker">https://github.com/ahrm/sioyek/issues</url>
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.0.0" date="2022-12-12">
+    <description>
+    <ul>
+    <li>We now have a super_fast_search option which can be enabled in prefs_user.config, when enabled, indexes document texts for extremely fast search.</li>
+    <li>Scrolling between pages in overview window.</li>
+    <li>Search results in an overview: using overview_next_item and overview_prev_item commands, you can now open an overview to search results instead of jumping to them.</li>
+    <li>Added a new overview_to_portal command which opens a quick overview to the closest portal. Previously portals were mostly useful for users with multiple monitors, but now they should be beneficial for all users. See the portal section of tutorial video for a brief introduction to what portals are, as well as a demo of this feature.</li>
+    <li>You can now define macros in your prefs_user.config file, which can be used to execute multiple commands.</li>
+    <li>Added a source command which allows you to include another config file in your prefs_user.config.</li>
+    <li>Improved extensions: the official python module now uses a much faster communication method with the running sioyek process. Moreover, we have added some new variables which can be used in extensions.</li>
+    <li>Upgrade to MuPDF 1.20 .</li>
+    <li>New keybind parsing method with support for non-standard layouts and unicode characters.</li>
+    <li>Add a smooth scroll mode.</li>
+    <li>Add ability to select single words using keyboard_select command.</li>
+    <li>Add a scrollbar which can be enabled using toggle_scrollbar command.</li>
+    <li>Add commands to set configuration options at runtime.</li>
+    <li>Add prerendered_page_count option which allows to configure how many pages does sioyek prerender.</li>
+    <li>Add an option to show the closest bookmark in the statusbar.</li>
+    <li>Add an option to indicate whether we are close to a portal in the statusbar.</li>
+    <li>Add an option to highlight using middle click instead of pressing a button.</li>
+    <li>Add ability to specify colors in config files using hexadecimal strings. For example instead of 1 1 0 you can now use #ffff00.</li>
+    <li>Many bug-fixes and quality of life improvements.</li>
+    </ul>
+    </description>
+    <url>https://ahrm.github.io/jekyll/update/2022/12/12/sioyek-2.html</url>
+    </release>
     <release version="1.5.0" date="2022-08-20">
     <description>
     <ul>
