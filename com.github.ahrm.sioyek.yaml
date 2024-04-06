@@ -1,9 +1,9 @@
 ---
 app-id: com.github.ahrm.sioyek
 
-runtime: org.freedesktop.Platform
-runtime-version: '23.08'
-sdk: org.freedesktop.Sdk
+runtime: org.kde.Platform
+runtime-version: 5.15-23.08
+sdk: org.kde.Sdk
 
 command: sioyek
 
@@ -28,9 +28,13 @@ modules:
       - ./b2 install --prefix=/app --with-system --with-random define="BOOST_SYSTEM_NO_DEPRECATED" -sNO_BZIP2=1 cxxflags=-fPIC cflags=-fPIC
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
-        sha256: 8681f175d4bdb26c52222665793eef08490d7758529330f98d3b29dd0735bccc
-  - qt5-15.yaml
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.gz
+        sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
+        x-checker-data:
+          type: anitya
+          project-id: 6845
+          stable-only: true
+          url-template: https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2
   - "shared-modules/glu/glu-9.json"
   - name: sioyek
     buildsystem: simple
@@ -46,9 +50,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/ahrm/sioyek.git
-        tag: 'v2.0.0'
-      - type: patch
-        path: patch/sioyek_build_fix.patch
+        commit: 35a550e8e8a6d179ed877ca6b0207da009620fb6
+      # - type: patch
+      #   path: patch/sioyek_build_fix.patch
       - type: file
         path: com.github.ahrm.sioyek.metainfo.xml
       - type: file
@@ -56,3 +60,4 @@ modules:
 
 cleanup:
   - /share/man
+
