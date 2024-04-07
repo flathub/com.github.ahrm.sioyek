@@ -1,20 +1,26 @@
 --- a/pdf_viewer_build_config.pro	2022-02-18 07:47:57.000000000 -0400
 +++ b/pdf_viewer_build_config.pro	2022-03-07 17:50:49.489579924 -0400
-@@ -5,9 +5,9 @@
+@@ -6,7 +6,7 @@
                zlib
            
- 
--QT += core opengl gui widgets network 3dinput openglextensions
-+QT += core opengl gui widgets openglextensions network
+
+-QT += core opengl gui widgets network 3dinput 
++QT += core opengl gui widgets network 
+
+ greaterThan(QT_MAJOR_VERSION, 5){
+        QT += openglwidgets
+@@ -17,7 +17,7 @@
+ }
+
  CONFIG += c++17
 -DEFINES += QT_3DINPUT_LIB QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_WIDGETS_LIB
-+DEFINES += QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_WIDGETS_LIB QT_NETWORK_LIB
- 
- 
++DEFINES += QT_OPENGL_LIB QT_OPENGLEXTENSIONS_LIB QT_WIDGETS_LIB
+
  CONFIG(non_portable){
-@@ -72,7 +72,7 @@
+     DEFINES += NON_PORTABLE
+@@ -96,7 +96,7 @@
      }
- 
+
      isEmpty(PREFIX){
 -        PREFIX = /usr
 +        PREFIX = /app
@@ -57,9 +63,9 @@
 --- a/pdf_viewer/main_widget.cpp	2022-02-18 07:47:57.000000000 -0400
 +++ b/pdf_viewer/main_widget.cpp	2022-03-07 18:09:25.807652975 -0400
 @@ -14,7 +14,7 @@
- #include <qboxlayout.h>
- #include <qdatetime.h>
  #include <qdesktopwidget.h>
+ #endif
+ 
 -#include <qkeyevent.h>
 +#include <QKeyEvent>
  #include <qlabel.h>
