@@ -5,9 +5,10 @@ cleanup:
 sources:
   - type: git
     url: https://invent.kde.org/qt/qt/qtwayland.git
-    #branch: kde/5.15
-    # HEAD as of 06/07/2022
-    commit: 64fa557eb30fc1219bec50a45107ea1a983411ed
+    tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
+  - type: patch
+    # https://src.fedoraproject.org/rpms/qt5-qtwayland/blob/rawhide/f/qtwayland-decoration-support-backports-from-qt6.patch
+    path: patch/qtwayland-decoration-support-backports-from-qt6.patch
 modules:
   - name: qt5-qtbase
     buildsystem: autotools
@@ -58,6 +59,8 @@ modules:
      - -dbus-linked
      - -fontconfig
      - -glib
+     - -gui
+     - -widgets
      - -icu
      - -openssl-linked
      - -no-cups
@@ -78,9 +81,7 @@ modules:
     sources:
      - type: git
        url: https://invent.kde.org/qt/qt/qtbase.git
-       #branch: kde/5.15
-       # HEAD as of 06/07/2022
-       commit: aa0c6db334cf6f0887f42cbd82e4af258126bdc5
+       tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
      - type: patch
        path: patch/qtbase-avoid-hardcoding-kernel-version.patch
      - type: patch
@@ -103,9 +104,7 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qt3d.git
-        #branch: kde/5.15
-        # HEAD as of 06/07/2022
-        commit: 3cc801c4ae41ff3f155258c4bf7e21bb5b3f6a3d
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
   - name: qt5-qttools
     buildsystem: qmake
     cleanup:
@@ -136,9 +135,7 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qttools.git
-        #branch: kde/5.15
-        # HEAD as of 06/07/2022
-        commit: 672ba9d902be3634a9fef80be65227aece9e0aed
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
   - name: qtx11extras
     buildsystem: qmake
     cleanup:
@@ -146,9 +143,7 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtx11extras.git
-        #branch: kde/5.15
-        # HEAD as of 14/03/2022
-        commit: 0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
   - name: qtdeclarative
     buildsystem: qmake
     cleanup:
@@ -156,9 +151,7 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtdeclarative.git
-        #branch: kde/5.15
-        # HEAD as of 06/07/2022
-        commit: c47f3d7b227c9bc86ca1702ae3291a62c2116cfa
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
   - name: qtquickcontrols
     buildsystem: qmake
     cleanup:
@@ -166,6 +159,21 @@ modules:
     sources:
       - type: git
         url: https://invent.kde.org/qt/qt/qtquickcontrols.git
-        #branch: kde/5.15
-        # HEAD as of 06/07/2022
-        commit: 4fb4e5942bfa1f92f1c759f182aa504ad52e8e3b
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
+  - name: qtsvg
+    buildsystem: qmake
+    cleanup:
+      - /bin
+    sources:
+      - type: git
+        url: https://invent.kde.org/qt/qt/qtsvg.git
+        tag: v5.15.13-lts-lgpl #v5.15.5-lts-lgpl
+  - name: QAdwaitaDecorations
+    buildsystem: cmake
+    #config-opts:
+    #  - -DCMAKE_INSTALL_PREFIX=/app/lib/plugins/QAdwaitaDecorations
+    #  - -DQT_PLUGINS_DIR=/app/lib/plugins/QAdwaitaDecorations
+    sources:
+      - type: git
+        url: https://github.com/FedoraQt/QAdwaitaDecorations.git
+        tag: 0.1.5
