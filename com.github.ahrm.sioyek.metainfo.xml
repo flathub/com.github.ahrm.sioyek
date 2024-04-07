@@ -44,6 +44,12 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.0.0.github29032024" date="2024-03-29">
+    <description>
+    <p>Flathub Beta release from Sioyek github code at 29-03-2024.</p>
+    </description>
+    <url>https://github.com/ahrm/sioyek/commit/35a550e8e8a6d179ed877ca6b0207da009620fb6</url>
+    </release>
     <release version="2.0.0" date="2022-12-12">
     <description>
     <ul>

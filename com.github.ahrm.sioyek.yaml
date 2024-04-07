@@ -46,7 +46,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ahrm/sioyek.git
-        tag: 'v2.0.0'
+        # latest master HEAD at 29/03/2024
+        commit: 35a550e8e8a6d179ed877ca6b0207da009620fb6
       - type: patch
         path: patch/sioyek_build_fix.patch
       - type: file
