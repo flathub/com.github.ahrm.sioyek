@@ -1,9 +1,9 @@
 ---
 app-id: com.github.ahrm.sioyek
 
-runtime: org.kde.Platform
-runtime-version: 5.15-23.08
-sdk: org.kde.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: 23.08
+sdk: org.kde.Sdk//5.15-23.08
 
 command: sioyek
 
