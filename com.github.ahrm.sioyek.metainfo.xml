@@ -44,6 +44,12 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="3.0.0-alpha.0" date="2024-09-11">
+    <description>
+    <p>The database of this alpha release is incompatible with old database files. Make sure you backup your local.db and shared.db files before using this version.</p>
+    </description>
+    <url>https://github.com/ahrm/sioyek/releases/tag/sioyek3-alpha0</url>
+    </release>
     <release version="2.0.0.github29032024" date="2024-03-29">
     <description>
     <p>Flathub Beta release from Sioyek github code at 29-03-2024.</p>
