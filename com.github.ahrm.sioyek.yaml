@@ -2,7 +2,7 @@
 app-id: com.github.ahrm.sioyek
 
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 
 command: sioyek
@@ -14,6 +14,8 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/media
   - --filesystem=/tmp
+  # to access ~/.config/sioyek/prefs_user.config
+  - --filesystem=~/.config/sioyek
   - --share=ipc
   - --socket=wayland
   - --socket=fallback-x11
@@ -49,6 +51,10 @@ modules:
         tag: 'v2.0.0'
       - type: patch
         path: patch/sioyek_build_fix.patch
+      - type: patch
+        path: patch/update_build_linux.patch
+      - type: patch
+        path: patch/fix_build_GL_CLAMP.patch
       - type: file
         path: com.github.ahrm.sioyek.metainfo.xml
       - type: file
@@ -56,3 +62,9 @@ modules:
 
 cleanup:
   - /share/man
+  - /include
+  - /lib/pkgconfig
+  - /share/aclocal
+  - /share/man
+  - '*.la'
+  - '*.a'

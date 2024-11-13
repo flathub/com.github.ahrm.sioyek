@@ -1,0 +1,15 @@
+--- a/pdf_viewer/pdf_renderer.cpp	2022-12-16 16:06:01.000000000 +0000
++++ b/pdf_viewer/pdf_renderer.cpp	2024-11-14 18:22:01.110985743 +0000
+@@ -5,6 +5,12 @@
+ extern bool LINEAR_TEXTURE_FILTERING;
+ //extern bool AUTO_EMBED_ANNOTATIONS;
+ 
++//Fix Aarch64 build
++// See https://www.khronos.org/opengl/wiki/Common_Mistakes#Texture_edge_color_problem
++#if !defined(GL_CLAMP)
++#define GL_CLAMP GL_CLAMP_TO_EDGE
++#endif
++
+ PdfRenderer::PdfRenderer(int num_threads, bool* should_quit_pointer, fz_context* context_to_clone, float display_scale) : context_to_clone(context_to_clone),
+ pixmaps_to_drop(num_threads),
+ pixmap_drop_mutex(num_threads),
