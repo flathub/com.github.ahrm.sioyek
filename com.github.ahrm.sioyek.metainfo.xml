@@ -21,20 +21,25 @@
     </ul>
     <p>Sometimes when reading a document you need to go back a few pages (perhaps to view a definition or something) and quickly jump back to where you were. You can achieve this by using marks. Marks are named locations within a PDF file (each mark has a single character name for example 'a' or 'm') which you can quickly jump to using their name. In the aforementioned example, before going back to the definition you mark your location and later jump back to the mark by invoking its name. Lower case marks are local to the document and upper case marks are global (this should be very familiar to you if you have used vim).</p>
     <p>Suppose you are reading a paragraph which references a figure which is not very close to the current location. Jumping back and forth between the current paragraph and the figure can be very annoying. Using portals, you can link the paragraph's location to the figure's location. Sioyek shows the closest portal destination in a separate window (which is usually placed on a second monitor). This window is automatically updated to show the closest portal destination as the user navigates the document.</p>
-    <p>Under Wayland, Sioyek will use by default the Wayland backend, if you prefer the X11 backend you can force it with: <code>flatpak run --nosocket=wayland --socket=x11 com.github.ahrm.sioyek</code></p>
+    <p>Under Wayland, Sioyek will use by default the Wayland backend, if you prefer the X11 backend you can force it with <code>flatpak run --nosocket=wayland --socket=x11 com.github.ahrm.sioyek</code></p>
+    <p>If you want to theme Sioyek, the <em>prefs_user.config</em> file will be looked up in <code>~/.config/sioyek/</code></p>
   </description>
   <screenshots>
     <screenshot type="default">
       <image type="source" width="1024" height="575">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/e3f6164ed73cd93b84d522a65e17edd9/1.png</image>
+      <caption>Portals feature</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="565">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/3750da59676eaf756baf6f5d3dddc60c/2.png</image>
+      <caption>Preview feature</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="573">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/f96a6b166f66a2679e4ef7128bae2deb/3.png</image>
+      <caption>TOC of file</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="572">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/76ce843e804553cdf2d561f1d7397534/4.png</image>
+      <caption>Jump to</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://github.com/ahrm/sioyek</url>
@@ -44,6 +49,36 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.0.0.fl1" date="2024-11-16">
+    <description>
+    <ul>
+    <li>fl1 maintenance release: update runtime to Freedesktop 24.08</li>
+    <li>fl1 maintenance release: reduce app size</li>
+    <li>fl1 maintenance release: fix bug on accessing prefs_user.config file which affected users trying to theme Sioyek</li>
+    <li>fl1 maintenance release: improve Aarch64 build</li>
+    <li>We now have a super_fast_search option which can be enabled in prefs_user.config, when enabled, indexes document texts for extremely fast search.</li>
+    <li>Scrolling between pages in overview window.</li>
+    <li>Search results in an overview: using overview_next_item and overview_prev_item commands, you can now open an overview to search results instead of jumping to them.</li>
+    <li>Added a new overview_to_portal command which opens a quick overview to the closest portal. Previously portals were mostly useful for users with multiple monitors, but now they should be beneficial for all users. See the portal section of tutorial video for a brief introduction to what portals are, as well as a demo of this feature.</li>
+    <li>You can now define macros in your prefs_user.config file, which can be used to execute multiple commands.</li>
+    <li>Added a source command which allows you to include another config file in your prefs_user.config.</li>
+    <li>Improved extensions: the official python module now uses a much faster communication method with the running sioyek process. Moreover, we have added some new variables which can be used in extensions.</li>
+    <li>Upgrade to MuPDF 1.20 .</li>
+    <li>New keybind parsing method with support for non-standard layouts and unicode characters.</li>
+    <li>Add a smooth scroll mode.</li>
+    <li>Add ability to select single words using keyboard_select command.</li>
+    <li>Add a scrollbar which can be enabled using toggle_scrollbar command.</li>
+    <li>Add commands to set configuration options at runtime.</li>
+    <li>Add prerendered_page_count option which allows to configure how many pages does sioyek prerender.</li>
+    <li>Add an option to show the closest bookmark in the statusbar.</li>
+    <li>Add an option to indicate whether we are close to a portal in the statusbar.</li>
+    <li>Add an option to highlight using middle click instead of pressing a button.</li>
+    <li>Add ability to specify colors in config files using hexadecimal strings. For example instead of 1 1 0 you can now use #ffff00.</li>
+    <li>Many bug-fixes and quality of life improvements.</li>
+    </ul>
+    </description>
+    <url>https://ahrm.github.io/jekyll/update/2022/12/12/sioyek-2.html</url>
+    </release>
     <release version="2.0.0" date="2022-12-12">
     <description>
     <ul>

@@ -1,0 +1,23 @@
+--- a/build_linux.sh	2022-12-16 16:06:01.000000000 +0000
++++ b/build_linux.sh	2024-11-16 13:58:00.370917008 +0000
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env bash
++set -e
+ 
+ # Compile mupdf
+ cd mupdf
+@@ -16,11 +17,11 @@
+ 	QMAKE="qmake"
+ fi
+ 
+-$QMAKE "CONFIG+=linux_app_image" pdf_viewer_build_config.pro
+-make
++$QMAKE "PREFIX=/app" "CONFIG+=linux_app_image" pdf_viewer_build_config.pro "DISTRIBUTION=Flatpak"
++make -j $FLATPAK_BUILDER_N_JOBS
+ 
+ # Copy files in build/ subdirectory
+-rm -r build 2> /dev/null
++rm -rf build 2> /dev/null
+ mkdir build
+ mv sioyek build/sioyek
+ cp pdf_viewer/prefs.config build/prefs.config
