@@ -2,7 +2,7 @@
 app-id: com.github.ahrm.sioyek
 
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 
 command: sioyek
@@ -14,6 +14,8 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/media
   - --filesystem=/tmp
+  # to access ~/.config/sioyek/prefs_user.config
+  - --filesystem=~/.config/sioyek
   - --share=ipc
   - --socket=wayland
   - --socket=fallback-x11
@@ -46,8 +48,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ahrm/sioyek.git
-        # latest master HEAD at 29/03/2024
-        commit: 35a550e8e8a6d179ed877ca6b0207da009620fb6
+        # latest master HEAD at 17/11/2024
+        commit: 159304abef7eb0c77bf7892a305d60bea19a997b
       - type: patch
         path: patch/sioyek_build_fix.patch
       - type: file
@@ -58,3 +60,7 @@ modules:
 cleanup:
   - /share/man
   - /include # Reduces app size considerably (thx Aman9das)
+  - /lib/pkgconfig
+  - /share/aclocal
+  - '*.la'
+  - '*.a'
