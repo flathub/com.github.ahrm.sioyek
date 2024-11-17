@@ -21,20 +21,25 @@
     </ul>
     <p>Sometimes when reading a document you need to go back a few pages (perhaps to view a definition or something) and quickly jump back to where you were. You can achieve this by using marks. Marks are named locations within a PDF file (each mark has a single character name for example 'a' or 'm') which you can quickly jump to using their name. In the aforementioned example, before going back to the definition you mark your location and later jump back to the mark by invoking its name. Lower case marks are local to the document and upper case marks are global (this should be very familiar to you if you have used vim).</p>
     <p>Suppose you are reading a paragraph which references a figure which is not very close to the current location. Jumping back and forth between the current paragraph and the figure can be very annoying. Using portals, you can link the paragraph's location to the figure's location. Sioyek shows the closest portal destination in a separate window (which is usually placed on a second monitor). This window is automatically updated to show the closest portal destination as the user navigates the document.</p>
-    <p>Under Wayland, Sioyek will use by default the Wayland backend, if you prefer the X11 backend you can force it with: <code>flatpak run --nosocket=wayland --socket=x11 com.github.ahrm.sioyek</code></p>
+    <p>Under Wayland, Sioyek will use by default the Wayland backend, if you prefer the X11 backend you can force it with <code>flatpak run --nosocket=wayland --socket=x11 com.github.ahrm.sioyek</code></p>
+    <p>If you want to theme Sioyek, the <em>prefs_user.config</em> file will be looked up in <code>~/.config/sioyek/</code></p>
   </description>
   <screenshots>
     <screenshot type="default">
       <image type="source" width="1024" height="575">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/e3f6164ed73cd93b84d522a65e17edd9/1.png</image>
+      <caption>Portals feature</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="565">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/3750da59676eaf756baf6f5d3dddc60c/2.png</image>
+      <caption>Preview feature</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="573">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/f96a6b166f66a2679e4ef7128bae2deb/3.png</image>
+      <caption>TOC of file</caption>
     </screenshot>
     <screenshot>
       <image type="source" width="1024" height="572">https://gitlab.gnome.org/nbenitez/gnome-codesearch/uploads/76ce843e804553cdf2d561f1d7397534/4.png</image>
+      <caption>Jump to</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://github.com/ahrm/sioyek</url>
@@ -44,6 +49,12 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="2.0.0.github17112024" date="2024-11-17">
+    <description>
+    <p>Flathub Beta release from Sioyek github code at 17-11-2024.</p>
+    </description>
+    <url>https://github.com/ahrm/sioyek/commit/159304abef7eb0c77bf7892a305d60bea19a997b</url>
+    </release>
     <release version="2.0.0.github29032024" date="2024-03-29">
     <description>
     <p>Flathub Beta release from Sioyek github code at 29-03-2024.</p>
